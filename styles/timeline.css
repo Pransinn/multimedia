@@ -510,20 +510,6 @@ footer {
 }
 
 
-.fade-in, .fade-up, .fade-left, .fade-right, 
-.fade-up-delay, .fade-up-delay-2, .fade-up-delay-3 {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease-out;
-}
-
-.fade-left { transform: translateX(-50px); }
-.fade-right { transform: translateX(50px); }
-
-.fade-up-delay { transition-delay: 0.2s; }
-.fade-up-delay-2 { transition-delay: 0.4s; }
-.fade-up-delay-3 { transition-delay: 0.6s; }
-
 .appear {
     opacity: 1;
     transform: translateX(0) translateY(0);
@@ -709,4 +695,23 @@ footer {
     .slideshow-container {
         height: 250px;
     }
+}
+
+img {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Keep animations for other elements but not images */
+.rizal-masthead,
+.rizal-book-cover,
+.rizal-portrait-classic,
+.reform-card {
+    animation: none !important;
+}
+
+/* Make fade animations faster */
+.fade-up, .fade-in, .fade-left, .fade-right, 
+.fade-up-delay, .fade-up-delay-2, .fade-up-delay-3 {
+    transition-duration: 0.3s !important;
 }
