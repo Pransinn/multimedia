@@ -1,0 +1,344 @@
+:root {
+    --bg: #FAF7F2;
+    --text: #3C2F2F;
+    --accent: #8B6F47;
+    --light: #F0E6DC;
+    --border: #D4C4B0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Libre Baskerville', serif;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+/* HEADER */
+header {
+    padding: 1rem 5%;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav-links a {
+    margin-left: 3rem;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.1rem;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+/* HERO SECTION */
+.hero {
+    text-align: center;
+    padding: 6rem 10% 4rem;
+    background: linear-gradient(135deg, #f6eee3, #ffffff, #f6eee3);
+    background-size: 300%;
+    animation: heroShift 10s infinite alternate;
+}
+
+@keyframes heroShift {
+    0% { background-position: left; }
+    100% { background-position: right; }
+}
+
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.2rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.8;
+    font-size: 1.1rem;
+}
+
+/* GENERIC SECTION */
+.section {
+    padding: 4rem 10%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+}
+
+.section p {
+    margin-bottom: 2rem;
+    opacity: 0.85;
+}
+
+/* CARD CONTAINERS */
+.card-container,
+.youth-activism-grid {
+    display: grid;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.youth-activism-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* INFO AND YOUTH CARDS */
+.info-card,
+.youth-card {
+    background: white;
+    padding: 2.2rem 2.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    width: 440px;
+    max-width: 100%;
+    transition: transform 0.4s ease;
+}
+
+.info-card:hover,
+.youth-card:hover {
+    transform: translateY(-12px);
+}
+
+.info-card h3,
+.youth-card h3 {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.comparison-box {
+    background-color: #F0E6DC;
+    border-radius: 12px;
+    padding: 2.2rem 2.5rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.comparison-box .col {
+    flex: 1 1 300px;
+}
+
+.comparison-box h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.comparison-card {
+    background: white;
+    padding: 2.2rem 2.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    width: 440px;
+    max-width: 100%;
+    transition: transform 0.4s ease;
+}
+
+.comparison-card span {
+    display: none;
+    color: var(--accent);
+    font-style: italic;
+}
+
+.comparison-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    background: #fffdf8;
+    border-color: #b8b29c;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.comparison-card:hover span {
+    display: inline;
+}
+
+/* COMPARISON LIST */
+.comparison-box ul {
+    list-style: square;
+    padding-left: 1.2rem;
+}
+
+.expand span {
+    display: none;
+    color: var(--accent);
+    font-style: italic;
+}
+
+.expand:hover span {
+    display: inline;
+}
+
+/* SUMMARY */
+.summary {
+    margin-top: 2rem;
+    font-style: italic;
+    text-align: center;
+    opacity: 0.8;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 4rem 5%;
+    color: var(--text);
+    opacity: 0.7;
+    font-size: 0.95rem;
+    border-top: 1px solid var(--border);
+    margin-top: 6rem;
+}
+
+/* TOP BUTTON */
+#topBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 0.6rem 1rem;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#topBtn:hover {
+    background: var(--text);
+}
+
+/* SCROLL REVEAL EFFECTS */
+.fade-up, .fade-up-delay-1, .fade-up-delay-2, .fade-up-delay-3,
+.fade-up-delay-4, .fade-up-delay-5, .fade-up-delay-6,
+.fade-left, .fade-right {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-left { transform: translateX(-50px); }
+.fade-right { transform: translateX(50px); }
+
+.fade-up-delay-1 { transition-delay: 0.2s; }
+.fade-up-delay-2 { transition-delay: 0.4s; }
+.fade-up-delay-3 { transition-delay: 0.6s; }
+.fade-up-delay-4 { transition-delay: 0.8s; }
+.fade-up-delay-5 { transition-delay: 1s; }
+.fade-up-delay-6 { transition-delay: 1.2s; }
+
+.appear {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+}
+
+/* COMPARISON LIST ITEMS AS CARDS */
+.comparison-box ul li {
+    background: white;
+    padding: 1.8rem 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    list-style: none; /* remove default bullets */
+}
+
+.comparison-box ul li span {
+    display: none;
+    color: var(--accent);
+    font-style: italic;
+}
+
+.comparison-box ul li:hover {
+    transform: translateY(-6px) scale(1.02);
+    background: #fffdf8;
+    border-color: #b8b29c;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.comparison-box ul li:hover span {
+    display: inline;
+}
+
+/* SLIDESHOW */
+.slideshow {
+    width: 100%;
+    max-width: 900px;
+    height: 350px;
+    margin: 2rem auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.slideshow .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: slideShow 16s infinite;
+}
+
+.slideshow .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Delay for each slide depending on index */
+.slideshow .slide:nth-child(1) { animation-delay: 0s; }
+.slideshow .slide:nth-child(2) { animation-delay: 4s; }
+.slideshow .slide:nth-child(3) { animation-delay: 8s; }
+.slideshow .slide:nth-child(4) { animation-delay: 12s; }
+
+@keyframes slideShow {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    25% { opacity: 1; }
+    35% { opacity: 0; }
+    100% { opacity: 0; }
+}
